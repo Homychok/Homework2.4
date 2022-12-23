@@ -7,6 +7,7 @@ public class Transport {
     private Integer roundTime;
     private Integer pitStopTime;
     private Integer maxVelocity;
+    public T driver;
 
     public Transport(String brand, String model, Double engineVolume, Integer roundTime, Integer pitStopTime, Integer maxVelocity) {
         if (brand != null && !brand.isEmpty() && !brand.isBlank()) {
@@ -84,4 +85,14 @@ public class Transport {
         } else if (maxVelocity <= 0){
             this.maxVelocity = Math.abs(maxVelocity);
         }    }
+
+    @Override
+    public String toString() {
+        return "Транспортное средство " + brand + " " + model +
+                ", с объемом двигателя " + engineVolume +
+                ",  время круга составило " + roundTime +
+                "с, время остановки на ремонт с начала гонки " + pitStopTime +
+                "с, максимальна скорость " + maxVelocity +
+                "м/c";
+    }
 }

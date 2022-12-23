@@ -1,7 +1,7 @@
 package homework;
 
 public interface Competing {
-    String pitStop();
-    String bestLapTime();
-    String maxSpeed();
+    void pitStop();
+    void bestLapTime();
+    void maxSpeed();
 }
