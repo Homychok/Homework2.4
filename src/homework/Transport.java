@@ -1,30 +1,27 @@
 package homework;
 
-public class Transport {
-    private String brand;
-    private String model;
-    private Double engineVolume;
-    private Integer roundTime;
-    private Integer pitStopTime;
-    private Integer maxVelocity;
-    public T driver;
+public abstract class Transport<Driver> {
+    protected String brand;
+    protected String model;
+    protected Double engineVolume;
+    protected Integer roundTime;
+    protected Integer pitStopTime;
+    protected Integer maxVelocity;
+   protected   Driver driver;
 
     public Transport(String brand, String model, Double engineVolume, Integer roundTime, Integer pitStopTime, Integer maxVelocity) {
-        if (brand != null && !brand.isEmpty() && !brand.isBlank()) {
-            this.brand = brand;
+        if (this.brand != null && !this.brand.isEmpty() && !this.brand.isBlank()) {
+            this.brand = this.brand;
         }
-        if (model != null && !model.isEmpty() && !model.isBlank()) {
-            this.model = model;
+        if (this.model != null && !this.model.isEmpty() && !this.model.isBlank()) {
+            this.model = this.model;
         }
-            setEngineVolume(engineVolume);
-        setRoundTime(roundTime);
-        setPitStopTime(pitStopTime);
-        setMaxVelocity(maxVelocity);
+        setEngineVolume(this.engineVolume);
+        setRoundTime(this.roundTime);
+        setPitStopTime(this.pitStopTime);
+        setMaxVelocity(this.maxVelocity);
     }
-
-
-
-    public void startMoving() {
+        public void startMoving() {
         System.out.println("Транспорт начинает движение!");
     }
 
@@ -32,10 +29,18 @@ public class Transport {
         System.out.println("Транспорт останавливается!");
     }
 
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
+    }
+
     public void setEngineVolume(Double engineVolume) {
         if (engineVolume != null && engineVolume > 0) {
             this.engineVolume = engineVolume;
-        } else if (engineVolume <= 0){
+        } else if (engineVolume < 0){
             this.engineVolume = Math.abs(engineVolume);
         }
     }
@@ -84,8 +89,13 @@ public class Transport {
             this.maxVelocity = maxVelocity;
         } else if (maxVelocity <= 0){
             this.maxVelocity = Math.abs(maxVelocity);
-        }    }
-
+        }
+    }
+    public String toString(Driver driver) {
+        return "Водитель " + driver +
+                " на автомобиле " + brand + " " + model +
+                " будет учавствовать в заезде";
+    }
     @Override
     public String toString() {
         return "Транспортное средство " + brand + " " + model +

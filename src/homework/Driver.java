@@ -1,9 +1,9 @@
 package homework;
 
-public class Driver  {
-    private Integer experience;
-    private String fullName;
-    private Boolean drivingLicence;
+public class Driver {
+    protected Integer experience;
+    protected String fullName;
+    protected Boolean drivingLicence;
 
     public Driver(Integer experience, String fullName, Boolean drivingLicence) {
         this.experience = experience;
@@ -29,4 +29,6 @@ public class Driver  {
     private void stopMovingDriver() {
 
     }
+
+
 }
