@@ -1,26 +1,35 @@
-package homework;
+package homework.Transport;
 
 
-public class Bus extends Transport<Category_D> implements Competing {
+import homework.Drivers.CategoryD;
 
-    public Bus(String brand, String model, Double engineVolume, Integer roundTime, Integer pitStopTime, Integer maxVelocity) {
+public class Bus<Bus extends CategoryD> extends Transport<CategoryD> {
+protected Bus driver;
+    public Bus (String brand, String model, Double engineVolume, Integer roundTime, Integer pitStopTime, Integer maxVelocity) {
         super(brand, model, engineVolume, roundTime, pitStopTime, maxVelocity);
     }
-    @Override
     public void pitStop() {
             System.out.println("Автобус " + getBrand() + " " + getModel() + " совершил пит-стоп спустя " + getPitStopTime() + " с с момента старта.");
         }
 
 
-    @Override
-    public void bestLapTime() {
+      public void bestLapTime() {
             System.out.println("Лучшее время круга автобуса " + getBrand() + " " + getModel() + " составило " + getPitStopTime() + " с.");
         }
-
-
-    @Override
     public void maxSpeed() {
             System.out.println("Максимальная скорость, развитая автобусом " + getBrand() + " " + getModel() + " за время круга составила " + getPitStopTime() + " м/с.");
         }
 
+//    public void setDriver(CategoryD driver) {
+//        this.driver = driver;
+//    }
+
+    public Bus getDriver() {
+        return driver;
+
+    }
+
+    public void setDriver(Bus driver) {
+        this.driver = driver;
+    }
 }

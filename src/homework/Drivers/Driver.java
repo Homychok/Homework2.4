@@ -1,4 +1,4 @@
-package homework;
+package homework.Drivers;
 
 public class Driver {
     protected Integer experience;
@@ -30,5 +30,8 @@ public class Driver {
 
     }
 
-
+    @Override
+    public String toString() {
+        return "Водитель " + fullName;
+    }
 }
