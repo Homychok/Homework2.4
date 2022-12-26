@@ -20,7 +20,7 @@ public class Main {
 //    static Category_C[] trackDriver = new Category_C[4];
 //    static Category_D[] busDriver = new Category_D[4];
 
-    public static void printTransport(Transport<?>... transports) {
+    public static void printTransport(Transport<?>... drivers) {
 //
 ////        for (Bus bus : bus) {
 //            System.out.println(bus);
@@ -40,27 +40,27 @@ public class Main {
 //                }
 //            }
 //        }
-        for (Transport<?> transport : transports) {
-            System.out.println(transport.getPitStopTime());
-            System.out.println(transport.getMaxVelocity());
-            System.out.println(transport.getRoundTime());
-            System.out.println("Водитель " + transport.getDriver() + " управляет автомобилем " + transport.getBrand() + " " + transport.getModel() + " и будет участвовать в заезде!");
+        for (Transport<?> driver : drivers) {
+//            System.out.println(driver.pitStopTime());
+//            System.out.println(driver.maxVelocity());
+//            System.out.println(driver.roundTime());
+            System.out.println("Водитель " + driver.getDriver() + " управляет автомобилем " + driver.getBrand() + " " + driver.getModel() + " и будет участвовать в заезде!");
         }
     }
 
     public static void main(String[] args) {
-        Bus bus1 = new Bus("Reno", "A5", 2.1, 70, 34, 120);
-        Bus bus2 = new Bus("Reno", "Logan", 3.7, 68, 37, 115);
-        Bus bus3 = new Bus("Reno", "F4", 4.5, 75, 45, 105);
-        Bus bus4 = new Bus("Reno", "A6", 7.2, 60, 10, 132);
-        Cars car1 = new Cars("Lada", "Granta", 3.4, 47, 34, 180);
-        Cars car2 = new Cars("Lada", "Vesta1", 4.4, 55, 24, 150);
-        Cars car3 = new Cars("Lada", "X-Ray", 5.4, 50, 36, 120);
-        Cars car4 = new Cars("Lada", "Vesta2", 6.4, 52, 32, 115);
-        Tracks track1 = new Tracks("Kia", "A1", 10.1, 63, 27, 137);
-        Tracks track2 = new Tracks("Kia", "A1", 11.1, 65, 45, 140);
-        Tracks track3 = new Tracks("Kia", "A1", 12.1, 63, 24, 150);
-        Tracks track4 = new Tracks("Kia", "A1", 13.1, 58, 13, 160);
+        Bus bus1 = new Bus("Reno", "A5", 2.1);
+        Bus bus2 = new Bus("Reno", "Logan", 3.7);
+        Bus bus3 = new Bus("Reno", "F4", 4.5);
+        Bus bus4 = new Bus("Reno", "A6", 7.2);
+        Cars car1 = new Cars("Lada", "Granta", 3.4);
+        Cars car2 = new Cars("Lada", "Vesta1", 4.4);
+        Cars car3 = new Cars("Lada", "X-Ray", 5.4);
+        Cars car4 = new Cars("Lada", "Vesta2", 6.4);
+        Tracks track1 = new Tracks("Kia", "A1", 10.1);
+        Tracks track2 = new Tracks("Kia", "A1", 11.1);
+        Tracks track3 = new Tracks("Kia", "A1", 12.1);
+        Tracks track4 = new Tracks("Kia", "A1", 13.1);
         CategoryB carDriver1 = new CategoryB(1, "Ivan Ivanovich", true);
         CategoryB carDriver2 = new CategoryB(2, "Ivan Petrovich", true);
         CategoryB carDriver3 = new CategoryB(3, "Ivan Kuzmichov", true);
@@ -85,7 +85,22 @@ public class Main {
         track2.setDriver(trackDriver2);
         track3.setDriver(trackDriver3);
         track4.setDriver(trackDriver4);
-        printTransport(car1, track2, bus3);
-
+        printTransport(car1, car2, car3, car4, track1, track2, track3, track4, bus1, bus2, bus3, bus4);
+//        System.out.println(busDriver1);
+        car1.pitStopTime();
+        car1.roundTime();
+        car1.maxVelocity();
+        car1.printInfo();
+        car2.printInfo();
+        car3.printInfo();
+        car4.printInfo();
+        bus1.printInfo();
+        bus2.printInfo();
+        bus3.printInfo();
+        bus4.printInfo();
+        track1.printInfo();
+        track2.printInfo();
+        track3.printInfo();
+        track4.printInfo();
     }
 }

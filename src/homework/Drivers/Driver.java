@@ -32,6 +32,7 @@ public class Driver {
 
     @Override
     public String toString() {
-        return "Водитель " + fullName;
+        return fullName;
     }
+
 }
